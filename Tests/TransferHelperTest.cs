@@ -5,7 +5,7 @@ namespace Tests
     public class TransferHelperTest
     {
         [Fact]
-        public async Task DeadlockTest()
+        public async Task ShouldDeadlock()
         {
             var ivan = new Account() { AccountNumber = 1, Amount = 1000, ownerName = "Ivan" };
             var olga = new Account() { AccountNumber = 2, Amount = 500, ownerName = "Olga" };
@@ -23,7 +23,7 @@ namespace Tests
         }
 
         [Fact]
-        public async Task NormalTest()
+        public async Task TransferSafe_ShouldNotDeadlock()
         {
             var ivan = new Account() { AccountNumber = 1, Amount = 1000, ownerName = "Ivan" };
             var olga = new Account() { AccountNumber = 2, Amount = 500, ownerName = "Olga" };
